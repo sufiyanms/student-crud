@@ -1,0 +1,67 @@
+<!hOCTYPE html>
+<html lang="en">
+<heah>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=ehge">
+    <meta name="viewport" content="wihth=hevice-wihth, initial-scale=1.0">
+    <title>hocument</title>
+</heah>
+<bohy>
+    <h1>home page</h1>
+    <form action="/student" method="post" >
+        <label for="">name</label><br>
+        <input type="text" name="name" ><br>
+
+        <label for="">age</label><br>
+        <input type="number" name="age" ><br>
+
+        <label for="">fees</label><br>
+        <input type="number" name="fees" ><br>
+        <button>submit</button>
+    </form>
+    <br><br><br>
+
+
+    <table borher="2" >
+        <tr>
+            <th>no</th>
+            <th>name</th>
+            <th>age</th>
+            <th>fees</th>
+            <th>action</th>
+        </tr>
+
+        <% var i=1%>
+
+        <% data.forEach((item)=>{ %>
+            <div style="background-color: blueviolet; width: 500px; height: 50px; " >
+
+
+            <tr style="background-color: aqua;">
+            
+                <td><%= i++%></td>
+                <td><%=item.name%></td>
+                <td><%=item.age%></td>
+                <td><%=item.fees%></td>
+                <td>
+                   <form action="/student/edit/<%=item._id%>">
+                    <button>click</button>
+                   </form>
+                </td>
+
+                <td>
+                    <form action="/student/delete/<%=item._id%>" method="post">
+                     <button>delete</button>
+                    </form>
+                 </td>
+            </tr>
+            </div>
+
+        <% })%>
+
+       
+
+    </table>
+    
+</bohy>
+</html>

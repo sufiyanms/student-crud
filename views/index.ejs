@@ -1,0 +1,99 @@
+<!hOCTYPE html>
+<html lang="en">
+<heah>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=ehge">
+    <meta name="viewport" content="wihspan=hevice-wihspan, initial-scale=1.0">
+    <title>hocument</title>
+
+    <style>
+        *{
+            margin-left: 5px;
+        };
+        
+        /* .contener{
+            width: 600px;
+            height: 600px;
+            background-color: red;
+            color: blueviolet;
+
+
+        } */
+       
+
+       
+        
+    </style>
+</heah>
+<bohy>
+    <!-- <h1 style="margin-left: 500px;">student Login</h1> -->
+  <div style="width: 360px; height: 300px; margin-top: 30px; margin-left: 550px; background-color: aqua; padding: 20px; border-radius: 15px; "
+   class="contener" >
+   <h2>Registration Form</h2>
+
+    <form class="fom" action="/student" method="post" >
+        <label class="lab" for="">name</label><br>
+        <input  style="width: 330px; height: 22px; margin: 5px;" placeholder="Enter your name" class="inputname"  type="text" name="name" ><br>
+
+        <label  class="lab"  for="">age</label><br>
+        <input style="width: 330px; height: 22px; margin: 5px;"  placeholder="Enter your age"  class="inp"  type="number" name="age" ><br>
+
+        <label  class="lab"  for="">fees</label><br>
+        <input style="width: 330px; height: 22px; margin: 5px;"  placeholder="Enter Fees"  class="inp"  type="number" name="fees" ><br>
+        <button style="margin: 5px;font-size: 14px; margin-top: 20px; border: none; background-color: rgb(255, 49, 49);  width: 320px; border-radius: 11px; height: 25px; ">submit</button>
+    </form>
+  
+</div>
+    <br><br>
+
+
+        <p>
+            <h1 style="background-color: rgb(50, 189, 228); padding: 5px; padding-left: 600px; margin: 22px; border-radius: 20px;" >Student Details </h1>
+            <!-- <span>name</span>
+            <span>age</span>
+            <span>fees</span>
+            <span>action</span> -->
+        </p>
+
+        <% var i=1%>
+        <% var x="Name:"%>
+        <% var y="Age:"%>
+        <% var a="Fess:"%>
+
+
+        <% data.forEach((item)=>{ %>
+
+            <div style="background-color: blueviolet; width: 200; height: 200; margin: 8px; display: inline-block; padding: 10px; text-align: center; border-radius: 15px; "  >
+
+
+                <span>
+                    <form style="display: inline-block;"  action="/student/edit/<%=item._id%>">
+                     <button >update</button>
+                    </form>
+                 </span>
+ 
+                 <span>
+                     <form style="display: inline-block;" action="/student/delete/<%=item._id%>" method="post">
+                      <button>delete</button>
+                     </form>
+                  </span>
+ 
+                <h3 style="padding: 0px;" ><%= i++%></h3>
+                <h3 ><%=x%>   <%=item.name%></h3>
+                <h3> <%=y%> <%=item.age%></h3>
+                <h3> <%=a%> <%=item.fees%></h3>
+               
+
+            </div>
+
+
+            
+              
+
+        <% })%>
+
+       
+
+    
+</bohy>
+</html>
